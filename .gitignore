@@ -1,0 +1,4 @@
+.vscode/
+.vs/
+src/NetCoreIoCAutoRegister/bin/
+src/NetCoreIoCAutoRegister/obj/
