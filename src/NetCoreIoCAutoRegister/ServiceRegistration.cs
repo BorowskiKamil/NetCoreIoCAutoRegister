@@ -95,7 +95,6 @@ namespace Microsoft.Extensions.DependencyInjection
                                                           && !t.IsAbstract);
 				if (implementation == null) continue;
 				
-				Console.WriteLine($"Added {interfaceType.Name} as {implementation.Name}, lifetime: {_serviceLifetime.ToString()}");
 				_serviceCollection.Add(new ServiceDescriptor(interfaceType, implementation, _serviceLifetime));
             }
 		}

@@ -30,11 +30,6 @@ namespace NetCoreIoCAutoRegister.Demo
                 .Where(x => x.Name.EndsWith("Repo"))
                 .Except<IFirstRepo>().AsScoped();
 
-            foreach (var s in services)
-            {
-                Console.WriteLine($"Name: {s.ServiceType.Name}");
-            }
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
