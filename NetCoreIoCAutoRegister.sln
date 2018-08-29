@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1C1BF83B-F57
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreIoCAutoRegister", "src\NetCoreIoCAutoRegister\NetCoreIoCAutoRegister.csproj", "{30B704B0-6AEC-4D4E-AF13-B7BD74B12854}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "demo", "demo", "{B8EF164B-8C2D-4B08-82EE-7A0FDFA8FAAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreIoCAutoRegister.Demo", "demo\NetCoreIoCAutoRegister.Demo\NetCoreIoCAutoRegister.Demo.csproj", "{C7FBD2A4-678C-47EB-9123-15028FD465D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +36,21 @@ Global
 		{30B704B0-6AEC-4D4E-AF13-B7BD74B12854}.Release|x64.Build.0 = Release|Any CPU
 		{30B704B0-6AEC-4D4E-AF13-B7BD74B12854}.Release|x86.ActiveCfg = Release|Any CPU
 		{30B704B0-6AEC-4D4E-AF13-B7BD74B12854}.Release|x86.Build.0 = Release|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Debug|x64.Build.0 = Debug|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Debug|x86.Build.0 = Debug|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Release|x64.ActiveCfg = Release|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Release|x64.Build.0 = Release|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Release|x86.ActiveCfg = Release|Any CPU
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{30B704B0-6AEC-4D4E-AF13-B7BD74B12854} = {1C1BF83B-F579-42BD-A940-D28EB9EBC887}
+		{C7FBD2A4-678C-47EB-9123-15028FD465D0} = {B8EF164B-8C2D-4B08-82EE-7A0FDFA8FAAF}
 	EndGlobalSection
 EndGlobal
