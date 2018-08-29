@@ -4,3 +4,5 @@ src/NetCoreIoCAutoRegister/bin/
 src/NetCoreIoCAutoRegister/obj/
 demo/NetCoreIoCAutoRegister.Demo/bin/
 demo/NetCoreIoCAutoRegister.Demo/obj/
+tests/NetCoreIoCAutoRegister.UnitTests/bin/
+tests/NetCoreIoCAutoRegister.UnitTests/obj/
