@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,10 +26,17 @@ namespace NetCoreIoCAutoRegister.Demo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.RegisterTypes().OfAssembly(Assembly.GetExecutingAssembly()).Where(x => x.Name.EndsWith("Repo")).Except<IFirstRepo>().AsScoped();
+
+            foreach (var s in services)
+            {
+                Console.WriteLine($"Name: {s.ServiceType.Name}");
+            }
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())

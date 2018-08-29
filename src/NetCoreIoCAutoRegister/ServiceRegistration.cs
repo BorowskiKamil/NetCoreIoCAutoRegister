@@ -77,7 +77,8 @@ namespace Microsoft.Extensions.DependencyInjection
 		{
 			var interfaces = _assemblies.SelectMany(i => i.GetTypes())
 					.SelectMany(i => i.GetInterfaces())
-					.Where(_typeRequirements);
+					.Where(_typeRequirements)
+					.Except(_exceptTypes);
 
 			if (_publicOnly)
 			{
@@ -94,6 +95,7 @@ namespace Microsoft.Extensions.DependencyInjection
                                                           && !t.IsAbstract);
 				if (implementation == null) continue;
 				
+				Console.WriteLine($"Added {interfaceType.Name} as {implementation.Name}, lifetime: {_serviceLifetime.ToString()}");
 				_serviceCollection.Add(new ServiceDescriptor(interfaceType, implementation, _serviceLifetime));
             }
 		}
