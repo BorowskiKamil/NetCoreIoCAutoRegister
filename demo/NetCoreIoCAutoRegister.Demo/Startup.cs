@@ -23,11 +23,12 @@ namespace NetCoreIoCAutoRegister.Demo
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.RegisterTypes().OfAssembly(Assembly.GetExecutingAssembly()).Where(x => x.Name.EndsWith("Repo")).Except<IFirstRepo>().AsScoped();
+            services.RegisterTypes()
+                .OfAssembly(Assembly.GetExecutingAssembly())
+                .Where(x => x.Name.EndsWith("Repo"))
+                .Except<IFirstRepo>().AsScoped();
 
             foreach (var s in services)
             {

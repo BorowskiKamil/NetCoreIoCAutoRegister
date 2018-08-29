@@ -14,7 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
 		private Func<Type, bool> _typeRequirements; 
 
-		private List<Assembly> _assemblies { get; set; } = new List<Assembly>();
+		public List<Assembly> Assemblies { get; set; } = new List<Assembly>();
 
 		private bool _publicOnly = false;
 
@@ -28,7 +28,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
 		public ServiceRegistration OfAssemblies(IEnumerable<Assembly> assemblies) 
 		{
-			_assemblies.AddRange(assemblies);
+			Assemblies.AddRange(assemblies);
             return this;
         }
 
@@ -58,24 +58,24 @@ namespace Microsoft.Extensions.DependencyInjection
 		public void AsSingleton()
 		{
             _serviceLifetime = ServiceLifetime.Singleton;
-            RegisterAsServices();
+            RegisterServices();
         }
 
         public void AsTransient()
 		{
             _serviceLifetime = ServiceLifetime.Transient;
-            RegisterAsServices();
+            RegisterServices();
         }
 
         public void AsScoped()
 		{
             _serviceLifetime = ServiceLifetime.Scoped;
-            RegisterAsServices();
+            RegisterServices();
         }
 
-		private void RegisterAsServices()
+		private void RegisterServices()
 		{
-			var interfaces = _assemblies.SelectMany(i => i.GetTypes())
+			var interfaces = Assemblies.SelectMany(i => i.GetTypes())
 					.SelectMany(i => i.GetInterfaces())
 					.Where(_typeRequirements)
 					.Except(_exceptTypes);
@@ -89,7 +89,7 @@ namespace Microsoft.Extensions.DependencyInjection
 			{
                 if (_serviceCollection.Any(s => s.ServiceType == interfaceType)) continue;
 
-                var implementation = _assemblies.SelectMany(p => p.GetTypes())
+                var implementation = Assemblies.SelectMany(p => p.GetTypes())
                                      .FirstOrDefault(t => interfaceType.IsAssignableFrom(t)
                                                           && !t.IsInterface 
                                                           && !t.IsAbstract);
