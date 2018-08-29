@@ -26,7 +26,7 @@ namespace NetCoreIoCAutoRegister.Demo
         public void ConfigureServices(IServiceCollection services)
         {
             services.RegisterTypes()
-                .OfAssembly(Assembly.GetExecutingAssembly())
+                .OfAssemblies(new List<Assembly> { Assembly.GetExecutingAssembly() } )
                 .Where(x => x.Name.EndsWith("Repo"))
                 .Except<IFirstRepo>().AsScoped();
 
