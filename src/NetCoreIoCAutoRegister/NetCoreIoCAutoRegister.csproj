@@ -1,7 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Kamil Borowski</Authors>
+    <Copyright>Copyright @2018 Kamil Borowski</Copyright>
+    <Description>Scan and auto-register components in assemblies according to user-specified rules in .NET Core.</Description>
+    <Version>1.0</Version>
+    <AssemblyName>Microsoft.Extensions.DependencyInjection</AssemblyName>
+    <PackageId>NetCoreIoCAutoRegister</PackageId>
+    <PackageTags>ASP.NET Core;.NET Core;dependency injection;</PackageTags>
+    <PackageLicenseUrl>https://github.com/BorowskiKamil/NetCoreIoCAutoRegister/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/BorowskiKamil/NetCoreIoCAutoRegister</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BorowskiKamil/NetCoreIoCAutoRegister.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
