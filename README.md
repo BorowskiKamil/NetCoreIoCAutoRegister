@@ -20,7 +20,7 @@ services.RegisterTypes(Assembly.GetExecutingAssembly())
 
 Remember: Each `RegisterTypes()` call will apply one set of rules only - you can't do multiple invocations in one approach.
 
-To submit given rules call `AsSingleton()`, `AsTransient()`, `AsScoped()` according which service lifetime do you want to choose.
+To submit given rules call `AsSingleton()`, `AsTransient()`, `AsScoped()` according which service lifetime you want to choose.
 
 ### Filtering Types
 
